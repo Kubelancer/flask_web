@@ -1,7 +1,9 @@
 from flask import Flask 
 from ddtrace import tracer
+from ddtrace.profiling import Profiler
 from flask import request
 import requests
+import ddtrace.profiling.auto
 
 def get_aws_ip():
   r = requests.get('http://169.254.169.254/latest/meta-data/local-ipv4')
